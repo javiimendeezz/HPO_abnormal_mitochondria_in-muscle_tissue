@@ -1,0 +1,8 @@
+Número de nodos: 38 
+Número de aristas: 428 
+Promedio de grado: 22.52632 
+Densidad de la red: 0.6088193 
+Dispersión de la red: 0.3911807 
+Longitud promedio de caminos: 1.472262 
+Conectividad de nodos: 1 
+Conectividad de aristas: 1 

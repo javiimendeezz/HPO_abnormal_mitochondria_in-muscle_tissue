@@ -1,0 +1,158 @@
+\documentclass{bmcart}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% CARGA DE PAQUETES DE LATEX               %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Load packages
+\usepackage{amsthm,amsmath}
+\usepackage{graphicx}
+%\RequirePackage[numbers]{natbib}
+\RequirePackage{hyperref}
+\usepackage[utf8]{inputenc} %unicode support
+%\usepackage[applemac]{inputenc} %applemac support if unicode package fails
+%\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% COMIENZO DEL DOCUMENTO                   %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+	\begin{frontmatter}
+	
+		\begin{fmbox}
+			\dochead{Research}
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%% INTRODUCIR TITULO PROYECTO               %%
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			
+			\title{Mitocondrias anormales en el tejido muscular}
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%% AUTORES. METER UNA ENTRADA AUTHOR        %%
+			%% POR PERSONA                              %%
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			
+			\author[
+			  addressref={aff1},                   % ESTA LINEA SE COPIA IGUAL PARA CADA AUTOR
+			  corref={aff1},                       % ESTA LINEA SOLO DEBE TENERLA EL COORDINADOR DEL GRUPO
+			  email={juliadelrio2003@uma.es}   % VUESTRO CORREO ACTIVO
+			]{\inits{J.R.T.}\fnm{Julia} \snm{Del Río Toledo}} % inits: INICIALES DE AUTOR, fnm: NOMBRE DE AUTOR, snm: APELLIDOS DE AUTOR
+			
+			\author[
+			  addressref={aff1},
+			  email={javiimendeezz@uma.es}
+			]{\inits{J.M.P.}\fnm{Javier} \snm{Méndez Parrilla}}
+
+			\author[
+			  addressref={aff1},
+			  email={jesusrus@uma.es}
+			]{\inits{J.J.R.M.}\fnm{Juan Jesús} \snm{Rus Muñoz}}
+			
+			\author[
+			addressref={aff1},
+			email={benjitox@uma.es}
+			]{\inits{B.C.F.}\fnm{Benjamín} \snm{Cortés Fernández}}
+
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%% AFILIACION. NO TOCAR                     %%
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			
+			\address[id=aff1]{%                           % unique id
+			  \orgdiv{ETSI Informática},             % department, if any
+			  \orgname{Universidad de Málaga},          % university, etc
+			  \city{Málaga},                              % city
+			  \cny{España}                                    % country
+			}
+		
+		\end{fmbox}% comment this for two column layout
+		
+		\begin{abstractbox}
+		
+			\begin{abstract} % abstract
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%% RESUMEN BREVE DE NO MAS DE 100 PALABRAS   %%
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+			
+			Este estudio analiza las interacciones moleculares relacionadas con el fenotipo "mitocondrias anormales en tejido muscular" (HP:0008316) mediante herramientas de biología computacional. Se identificaron genes relevantes usando la Ontología del Fenotipo Humano (HPO) y se analizaron sus interacciones proteicas con STRINGdb. La red resultante fue evaluada con métricas topológicas y se aplicaron algoritmos de agrupamiento para detectar comunidades funcionales. Finalmente, un análisis de enriquecimiento funcional destacó procesos biológicos clave, como la regulación mitocondrial y el metabolismo energético. Estos resultados ofrecen perspectivas fundamentales sobre las alteraciones mitocondriales en el tejido muscular, contribuyendo al entendimiento de enfermedades relacionadas.
+			
+			\end{abstract}
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%% PALABRAS CLAVE DEL PROYECTO              %%
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			
+			\begin{keyword}
+			\kwd{mitocondrias}
+			\kwd{fenotipo}
+			\kwd{redes de interacción proteica}
+			\kwd{análisis funcional}
+			\kwd{STRINGdb}
+			\kwd{biogénesis mitocondrial}
+			\end{keyword}
+		
+		
+		\end{abstractbox}
+	
+	\end{frontmatter}
+	
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% COMIENZO DEL DOCUMENTO REAL %%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\input{tex_files/introduction.tex}
+	\input{tex_files/material_methods.tex}
+	\input{tex_files/resultados.tex}
+	\input{tex_files/discusion.tex}
+	\input{tex_files/conclusiones.tex}
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% OTRA INFORMACIÓN                         %%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{backmatter}
+	
+		\section*{Abreviaciones}%% if any
+			\begin{itemize}
+				\item ATP: Adenosín trifosfato
+				\item GO: Gene Ontology
+				\item HPO: Human Phenotype Ontology (Ontología del Fenotipo Humano)
+				\item ORA: Over-Representation Analysis
+				\item PPI: Protein-Protein Interaction (Interacción Proteína-Proteína)
+				\item ROS: Reactive Oxygen Species (Especies Reactivas de Oxígeno)
+				\item JSON: JavaScript Object Notation
+				\item NCBI: National Center for Biotechnology Information
+			\end{itemize}
+		
+		\section*{Disponibilidad de datos y materiales}%% if any
+			\href{https://github.com/juliadelrio0/project_template}{Enlace al proyecto en GitHub}
+			
+		
+		\section*{Contribución de los autores}			
+			J.R.T: Redacción de parte de introducción y resultados, y métodos completo; 
+			J.J.R.M: Redacción de la otra parte de introducción y resultados, y discusión y conclusiones completas;
+			B.C.F: Redacción de parte de introducción, y materiales, y generado el Dokerfile, y launch, y materiales completos
+			J.M.P: Elaboracion codigo, introducion y métodos en latex.
+			
+		
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%% BIBLIOGRAFIA: no teneis que tocar nada, solo sustituir el archivo bibliography.bib %%
+		%% por el que hayais generado vosotros                                                %%
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
+		\bibliographystyle{bmc-mathphys} % Style BST file (bmc-mathphys, vancouver, spbasic).
+		\bibliography{bibliography}      % Bibliography file (usually '*.bib' )
+	
+	\end{backmatter}
+\end{document}

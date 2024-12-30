@@ -1,0 +1,77 @@
+
+Mejor algoritmo de clustering: Fast_Greedy 
+Edge_Betweenness clustering:
+Modularidad: 0.01066141 
+Número de clusters: 12 
+Clusters:
+  NDUFS7  NDUFAF1  FOXRED1   NDUFS3     SDHA  NDUFB10   AFG3L2   NDUFS6 
+       1        1        1        1        2        1        3        1 
+ NDUFB11   NDUFB9    NUBPL  NDUFAF2   NDUFS4   NDUFS8  NDUFAF3   NDUFV2 
+       1        1        4        1        1        1        1        1 
+TMEM126B   MT-CO1  MT-ATP6   MT-ND6   MT-ND1   MT-ND5   MT-CO2   MT-ND4 
+       5        6        7        1        1        1        8        1 
+  MT-CO3   MT-ND2   MT-ND3   NDUFS2  NDUFAF4   NDUFA1  NDUFAF5  NDUFA11 
+       9        1        1        1        1        1       10        1 
+  NDUFS1   NDUFB3  TIMMDC1   NDUFA6   NDUFV1  NDUFAF8 
+       1        1       11        1        1       12 
+
+Walktrap clustering:
+Modularidad: 0.02946764 
+Número de clusters: 9 
+Clusters:
+  NDUFS7  NDUFAF1  FOXRED1   NDUFS3     SDHA  NDUFB10   AFG3L2   NDUFS6 
+       1        1        1        1        2        1        3        1 
+ NDUFB11   NDUFB9    NUBPL  NDUFAF2   NDUFS4   NDUFS8  NDUFAF3   NDUFV2 
+       1        1        4        1        1        1        1        1 
+TMEM126B   MT-CO1  MT-ATP6   MT-ND6   MT-ND1   MT-ND5   MT-CO2   MT-ND4 
+       5        2        2        1        1        1        2        1 
+  MT-CO3   MT-ND2   MT-ND3   NDUFS2  NDUFAF4   NDUFA1  NDUFAF5  NDUFA11 
+       2        1        1        6        1        1        7        1 
+  NDUFS1   NDUFB3  TIMMDC1   NDUFA6   NDUFV1  NDUFAF8 
+       1        1        8        1        1        9 
+
+Fast_Greedy clustering:
+Modularidad: 0.06917908 
+Número de clusters: 3 
+Clusters:
+  NDUFS7  NDUFAF1  FOXRED1   NDUFS3     SDHA  NDUFB10   AFG3L2   NDUFS6 
+       1        1        2        2        2        1        1        1 
+ NDUFB11   NDUFB9    NUBPL  NDUFAF2   NDUFS4   NDUFS8  NDUFAF3   NDUFV2 
+       1        1        3        1        1        1        1        2 
+TMEM126B   MT-CO1  MT-ATP6   MT-ND6   MT-ND1   MT-ND5   MT-CO2   MT-ND4 
+       1        2        2        2        2        2        2        2 
+  MT-CO3   MT-ND2   MT-ND3   NDUFS2  NDUFAF4   NDUFA1  NDUFAF5  NDUFA11 
+       2        2        2        3        1        1        1        1 
+  NDUFS1   NDUFB3  TIMMDC1   NDUFA6   NDUFV1  NDUFAF8 
+       2        1        1        1        2        1 
+
+Infomap clustering:
+Modularidad: 2.220446e-16 
+Número de clusters: 1 
+Clusters:
+  NDUFS7  NDUFAF1  FOXRED1   NDUFS3     SDHA  NDUFB10   AFG3L2   NDUFS6 
+       1        1        1        1        1        1        1        1 
+ NDUFB11   NDUFB9    NUBPL  NDUFAF2   NDUFS4   NDUFS8  NDUFAF3   NDUFV2 
+       1        1        1        1        1        1        1        1 
+TMEM126B   MT-CO1  MT-ATP6   MT-ND6   MT-ND1   MT-ND5   MT-CO2   MT-ND4 
+       1        1        1        1        1        1        1        1 
+  MT-CO3   MT-ND2   MT-ND3   NDUFS2  NDUFAF4   NDUFA1  NDUFAF5  NDUFA11 
+       1        1        1        1        1        1        1        1 
+  NDUFS1   NDUFB3  TIMMDC1   NDUFA6   NDUFV1  NDUFAF8 
+       1        1        1        1        1        1 
+
+Label_Propagation clustering:
+Modularidad: 2.220446e-16 
+Número de clusters: 1 
+Clusters:
+  NDUFS7  NDUFAF1  FOXRED1   NDUFS3     SDHA  NDUFB10   AFG3L2   NDUFS6 
+       1        1        1        1        1        1        1        1 
+ NDUFB11   NDUFB9    NUBPL  NDUFAF2   NDUFS4   NDUFS8  NDUFAF3   NDUFV2 
+       1        1        1        1        1        1        1        1 
+TMEM126B   MT-CO1  MT-ATP6   MT-ND6   MT-ND1   MT-ND5   MT-CO2   MT-ND4 
+       1        1        1        1        1        1        1        1 
+  MT-CO3   MT-ND2   MT-ND3   NDUFS2  NDUFAF4   NDUFA1  NDUFAF5  NDUFA11 
+       1        1        1        1        1        1        1        1 
+  NDUFS1   NDUFB3  TIMMDC1   NDUFA6   NDUFV1  NDUFAF8 
+       1        1        1        1        1        1 
+

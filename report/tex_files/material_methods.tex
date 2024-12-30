@@ -1,0 +1,173 @@
+\section{Materiales y métodos}
+
+
+\subsection{\textbf{Materiales}}
+
+
+\subsubsection{Programas}
+
+
+\textbf{R} es un lenguaje de programación y un entorno estadístico ampliamente utilizado en bioinformática, análisis de datos y ciencia de datos. Sirve para realizar análisis estadísticos complejos, visualización de datos y manipulación de datos biológicos, como el análisis de expresión genética, que resulta relevante en este estudio. Fue desarrollado por Robert Gentleman y Ross Ihaka en la Universidad de Auckland, Nueva Zelanda, y es un proyecto de código abierto mantenido por la comunidad R \cite{jimenez2019introduccion}.
+
+
+En este trabajo, se utilizó la versión 4.4.2 de R, que incluye mejoras recientes en rendimiento y funcionalidad. R ha logrado un lugar destacado en bioinformática y ciencia de datos gracias a su flexibilidad y extensibilidad, permitiendo abordar desde análisis de datos genómicos hasta visualización de redes biológicas complejas. Esto se ha reflejado en su amplia adopción y en la disponibilidad de paquetes especializados que simplifican tareas como el análisis de secuencias, la estadística avanzada y la integración de múltiples tipos de datos biológicos \cite{Giorgi2022}. 
+
+
+En este proyecto, R se empleó como una herramienta integral para el análisis de redes y la representación funcional de datos genómicos, haciendo uso de técnicas computacionales modernas y métodos estadísticos reproducibles. Su capacidad para integrar datos biológicos complejos lo convierte en un recurso invaluable en investigaciones bioinformáticas actuales \cite{RLanguaje}.
+
+
+
+
+\textbf{Python} es un lenguaje de programación ampliamente utilizado en bioinformática y análisis de datos biológicos debido a su simplicidad y versatilidad. Es especialmente útil para gestionar y analizar grandes volúmenes de datos genómicos, así como para automatizar flujos de trabajo. En este estudio, se empleó Python para interactuar con bases de datos biológicas y obtener información sobre genes y sus interacciones proteicas, utilizando su capacidad para integrar diferentes tecnologías y bibliotecas.
+
+La versión 3.12.0 de Python se utilizó en este proyecto, aprovechando las mejoras en rendimiento y manejo de memoria, lo que resulta esencial cuando se trabajan con grandes cantidades de datos. Este lenguaje ha demostrado ser clave en estudios similares, donde se utiliza para realizar análisis de redes proteicas y facilitar la reproducibilidad de los resultados científicos \cite{Python_Teams}.
+
+
+\subsubsection{Bases de Datos}
+
+
+\textbf{HPO} (Human Phenotype Ontology) es una base de datos que proporciona una clasificación estándar de los términos fenotípicos humanos, cada uno con un identificador único.
+En el contexto de la investigación genética, HPO permite relacionar los fenotipos observables ("mitocondrias anormales en el tejido muscular", identificado por HP:0008316) con genes y enfermedades específicas. Esto facilita el análisis y busca de datos genéticos en función de características fenotípicas.
+Es mantenido por la comunidad científica, específicamente por el equipo de Monarch Initiative, para mejorar la precisión en los estudios de fenotipos y genética humana.\cite{kohler2014human}\\
+
+
+
+
+\textbf{StringDB} es una base de datos que contiene información sobre interacciones proteína-proteína (PPI), recopilada de diversas fuentes como experimentos, bases de datos públicas y predicciones computacionales.
+Esta base de datos permite investigar redes de proteínas interconectadas, facilitando el análisis de cómo las proteínas interactúan en diferentes contextos biológicos, algo esencial en estudios genéticos como los relacionados con HPO.
+Desarrollada por un consorcio de investigadores y está disponible como un recurso en línea gratuito para la comunidad científica.\cite{szklarczyk2015string}\\
+
+ 
+
+El \textbf{NCBI} (National Center for Biotechnology Information) es un centro de investigación en biotecnología de Estados Unidos que proporciona acceso a una vasta colección de bases de datos biológicas y genómicas.
+Es utilizado para acceder a datos sobre genes, proteínas y secuencias genómicas, y proporciona herramientas de análisis. Nosotros lo utilizamos junto a HPO,para facilitar la correlación entre genes específicos y fenotipos.
+Fue fundado por los Institutos Nacionales de Salud (NIH) de Estados Unidos y es un recurso fundamental para la investigación genética y bioinformática.\cite{jenuth1999ncbi}
+
+
+
+\subsubsection{Bibliotecas}
+
+
+\paragraph{Bibliotecas en R} \mbox{}\\
+
+El análisis y la visualización de datos en este estudio se ha realizado utilizando varias bibliotecas de R, que proporcionan herramientas especializadas para el manejo de redes, análisis de genes y visualización de resultados. A continuación, se describen las principales bibliotecas utilizadas.
+
+\textbf{Igraph} (versión 2.1.2) es una biblioteca para el análisis y la visualización de redes complejas, desarrollada en múltiples lenguajes, incluyendo Python y R. En bioinformática, se utiliza para construir y analizar redes de interacciones biológicas, como redes de proteínas o genes, ayudando a visualizar cómo las proteínas relacionadas con un fenotipo específico pueden interactuar entre sí. Esta biblioteca es especialmente útil para el análisis de grafos de interacciones, permitiendo obtener métricas como la centralidad, coeficiente de agrupamiento y otros atributos topológicos de las redes. Fue desarrollada por una comunidad internacional de programadores y científicos\cite{valdez2016analisis} \cite{igraphref} \cite{igraphmanual}.
+
+\textbf{ClusterProfiler} (versión 4.14.4) es una biblioteca utilizada para realizar análisis de enriquecimiento funcional de genes. Esta herramienta permite identificar las rutas biológicas, funciones moleculares y procesos celulares que están significativamente representados en los conjuntos de genes estudiados. En este trabajo, se empleó para realizar el enriquecimiento de los genes asociados a interacciones de proteínas y a fenotipos específicos. \cite{clusterprofiler1} \cite{clusterprofiler2} \cite{clusterprofiler3} \cite{clusterprofiler4}.
+
+\textbf{Org.Hs.eg.db} (versión 3.20.0) proporciona una base de datos extensa con información sobre genes humanos, incluyendo símbolos de genes, identificadores de acceso, y asociaciones con términos GO, entre otras. Esta base de datos fue crucial para mapear los genes a los términos correspondientes en los análisis de enriquecimiento. \cite{org.Hs.eg.db_manual}
+
+\textbf{Enrichplot} (versión 1.26.3) se utilizó para la representación gráfica de los resultados de los análisis de enriquecimiento. Esta biblioteca facilita la creación de visualizaciones, como gráficos de barras, gráficos de puntos y diagramas de enriquecimiento, para facilitar la interpretación de los datos. \cite{enrichplotmanual}
+
+\textbf{Optparse} (versión 1.7.5) es una biblioteca que se utilizó para implementar interfaces de línea de comandos en los scripts de Python, permitiendo a los usuarios especificar parámetros de entrada y salida de manera flexible y eficiente.\cite{optparse}
+
+\textbf{GGplot2} (versión 3.5.1) es una biblioteca popular para la creación de gráficos en R. En este estudio, se utilizó para generar visualizaciones adicionales de los resultados de los análisis y facilitar la interpretación visual de las interacciones de proteínas y los enriquecimientos funcionales. \cite{ggplot2}
+
+
+\paragraph{Bibliotecas en Python} \mbox{}\\
+
+\textbf{Pandas} es una biblioteca en Python que facilita la manipulación y el análisis de datos mediante estructuras de datos como DataFrames.
+En estudios bioinformáticos, pandas se utiliza para manejar y procesar grandes volúmenes de datos, como los obtenidos de bases de datos genéticas. Es útil para organizar los datos de HPO y facilitar su análisis.
+Fue creada por Wes McKinney y es ahora una biblioteca ampliamente adoptada en el ámbito de la ciencia de datos.\cite{mckinney2011pandas}
+
+
+\textbf{Requests} es una biblioteca de Python que permite realizar solicitudes HTTP de forma sencilla.
+Es utilizada para acceder a APIs y extraer datos de bases de datos en línea, como HPO o StringDB, permitiendo automatizar la obtención de datos relevantes para el estudio de fenotipos y genes.
+Fue desarrollada por Kenneth Reitz y es una de las bibliotecas más populares para trabajar con APIs en Python.\cite{chandra2015python}
+
+
+\textbf{Networkx} es una biblioteca en Python para la creación, manipulación y análisis de redes complejas.
+Se utiliza para modelar y analizar redes de interacciones genéticas o de proteínas. Por ejemplo, en el análisis de datos de StringDB, networkx permite estudiar las relaciones entre proteínas de forma visual y cuantitativa.
+Es una biblioteca de código abierto mantenida por la comunidad, utilizada ampliamente en estudios de redes biológicas y sociales.\cite{hagberg2020networkx}
+
+
+\textbf{Matplotlib.pyplot} es una biblioteca de Python que permite crear gráficos y visualizaciones de datos de forma detallada y personalizada.
+Lo utilizamos para representar datos biológicos y resultados de análisis de manera visual, lo cual facilita la interpretación de datos complejos, como los patrones de interacción entre proteínas o genes relacionados con un fenotipo específico.
+Fue desarrollada por John D. Hunter y es mantenida por la comunidad científica y de datos.\cite{ari2014matplotlib}
+
+
+
+\subsection{\textbf{Métodos}}
+
+\subsubsection{Obtención de datos y construcción de la red de interacciones}
+
+El análisis comenzó con la identificación de genes asociados al fenotipo de interés, definido por el código HP:0008316, que corresponde a "mitocondrias anormales en tejido muscular" en la Ontología del Fenotipo Humano (HPO, por sus siglas en inglés). Este paso fue crucial para establecer una base de datos inicial que sustentara el estudio.
+
+Para llevar a cabo este análisis de manera sistemática, desarrollamos un script en \textbf{Python} llamado \textbf{\textit{hpo\_genes\_fetcher.py}} que interactuaba con la API de \textbf{HPO}. La elección de Python como lenguaje principal se basó en su flexibilidad y en su amplio ecosistema de bibliotecas, como \textit{requests} y \textbf{\textit{pandas}}, que son ideales para manejar datos y realizar solicitudes con las APIs. El script se diseñó para automatizar la extracción de genes relacionados con el fenotipo, lo que evitaba errores manuales y garantizaba la reproducibilidad del proceso.
+
+Se utilizó la biblioteca \textbf{\textit{requests}} para realizar solicitudes HTTP de tipo GET a los endpoints específicos de la API de HPO. El identificador del fenotipo, HP:0008316, se incluyó como parámetro en la URL de la solicitud, asegurando que los datos recuperados estuvieran específicamente relacionados con este término fenotípico. La respuesta de la API fue procesada y transformada. Esta contenía una lista dentro del campo "genes", que incluía los nombres de los genes asociados al fenotipo.
+
+Finalmente, los genes se almacenaron en un archivo de texto estructurado llamado \textit{genes\_list.txt}, dentro de un directorio especificado, para facilitar su acceso y uso en las etapas siguientes del estudio.
+
+El archivo generado fue utilizado como entrada en un segundo script de Python, \textbf{\textit{fetch\_interactions.py}}, que se encargó de analizar las interacciones proteicas entre las proteínas codificadas por los genes recopilados. Este análisis es crucial para comprender cómo interactúan entre sí las proteínas codificadas por los genes, lo que puede revelar información sobre sus funciones en el fenotipo estudiado.
+
+Utilizando la API de \textbf{STRINGdb}, el script empleó solicitudes POST para enviar los nombres de las proteínas. Se configuraron parámetros como la especie de interés, en nuestro caso el Homo sapiens, cuyo código en el \textbf{NCBI} es 9606; y un umbral de confianza, aunque se encontraba por defecto con un valor de 0.5, se ejecutó con 0.9, significando esto que las interacciones incluidas tienen al menos un 90\% de probabilidad de ser funcionalmente relevantes, según los cálculos de STRINGdb. Este valor más restrictivo aseguró que únicamente se consideraran interacciones de alta confiabilidad, aumentando así la precisión de los resultados.
+
+La respuesta de la API, en formato JSON, proporcionó información detallada sobre las interacciones, incluyendo los genes involucrados, la naturaleza de las interacciones y una puntuación de confianza. Estos datos se filtraron y almacenaron en un archivo CSV, \textit{interacciones\_proteinas.csv}, lo que permitió un análisis estructurado y reproducible.
+
+Además, el script incluyó una funcionalidad para generar una representación visual de la red de interacciones en formato PNG, utilizando otro endpoint de STRINGdb. Esta imagen, guardada en un directorio específico, facilitó la documentación y presentación gráfica de los resultados, ayudando a comprender la topología de la red y la conectividad de las proteínas involucradas.
+
+En conjunto, estos dos scripts establecieron las bases para el análisis detallado de las interacciones proteicas y su papel potencial en el fenotipo estudiado, integrando datos de diversas fuentes de manera automatizada y reproducible.
+
+\subsubsection{Análisis de la red y visualización avanzada}
+
+El análisis detallado de la red de interacciones proteicas se realizó en \textbf{R} utilizando la biblioteca \textbf{iGraph}. Este paso fue fundamental para profundizar en las propiedades estructurales y funcionales de la red, permitiendo identificar patrones clave y relaciones críticas entre los genes asociados a nuestro fenotipo. Los datos generados previamente con STRINGdb, que contenían la lista de nodos y aristas en formato CSV, fueron importados en R mediante la función \textit{read.csv()}, asegurando un flujo de trabajo integrado y reproducible entre las herramientas empleadas.
+
+Los datos se transformaron en un grafo no dirigido utilizando \textit{graph\_from\_data\_frame()}, donde los nodos representaban genes y las aristas sus interacciones proteicas. Este grafo permitió analizar y visualizar las conexiones de la red, asignando propiedades como colores, tamaños y pesos según métricas específicas. Aunque las interacciones se procesaron como no dirigidas, los pesos de las aristas correspondieron a la puntuación de confianza calculada por STRINGdb, lo que proporcionó un marco robusto para interpretar la importancia funcional de cada conexión.
+
+\paragraph{Visualización de la red} \mbox{}\\
+
+Para la visualización, se utilizaron diversas estrategias para representar gráficamente la red, destacando características clave mediante personalizaciones avanzadas en iGraph. La función \textit{plot()} se empleó para crear visualizaciones iniciales, ajustando los colores y tamaños de los nodos en función de su grado de conectividad, lo que permitió identificar fácilmente los genes más conectados o "hubs".Además, se probaron diferentes algoritmos de disposición, como:
+
+\begin{itemize}
+	\item \textit{layout\_with\_fr} (Fruchterman-Reingold), ideal para visualizar la red como un sistema de fuerzas equilibradas.
+	\item \textit{layout\_in\_circle},para destacar patrones circulares de conectividad.
+\end{itemize}
+
+Estas visualizaciones se generaron y guardaron automáticamente en archivos PNG utilizando el script \textbf{\textit{plot\_network.R}}. Este produjo representaciones visuales avanzadas, incluyendo: redes básicas para obtener una visión general de la topología, redes escaladas por grado de conectividad de los nodos y mapas de calor que ilustraron la intensidad de las interacciones entre genes.
+
+Además de las visualizaciones, se calcularon un conjunto de métricas clave para describir la red, incluyendo:
+
+\begin{itemize}
+	\item Grado de conectividad: Para identificar genes con mayor número de interacciones (hubs).
+	\item Centralidad de intermediación (betweenness): Para detectar nodos clave en el flujo de información.
+	\item Coeficiente de agrupamiento: Para evaluar la formación de clústeres densos de genes.
+	\item Densidad de la red y conectividad global: Indicando el nivel general de cohesión de la red.
+\end{itemize}
+
+Estas métricas se resumieron en un archivo de texto (\textit{network\_metrics.txt}), que sirvió como referencia para el análisis estructural.
+
+\paragraph{Análisis de comunidades} \mbox{}\\
+
+Por otra parte, la identificación y análisis de comunidades funcionales se llevó a cabo utilizando el script \textbf{\textit{cluster\_proteinas.R}}, que implementaba varios algoritmos de agrupamiento como:
+
+\begin{itemize}
+	\item Edga Betweenness: Basado en la eliminación de aristas críticas.
+	\item Walktrap: Basado en recorridos aleatorios para identificar módulos densos.
+	\item Fast Greedy, Infomap y Label Propagation: Métodos optimizados para diferentes contextos topológicos.
+\end{itemize}
+
+El script seleccionó automáticamente el mejor algoritmo en función de la modularidad, una métrica que mide la calidad de los clústeres formados. Las comunidades detectadas se visualizaron en gráficos coloreados y dendogramas, destacando la jerarquía de los clústeres y los nodos principales en cada uno. Los genes pertenecientes a cada comunidad se guardaron en archivos separados para facilitar su análisis funcional posterior.
+
+La integración de métricas, visualizaciones y análisis de comunidades permitió identificar subgrupos funcionales dentro de la red de interacción proteica. Cada clúster se analizó considerando su relevancia en el contexto del fenotipo, proporcionando información valiosa sobre las relaciones biológicas subyacentes. Este enfoque combinó análisis cuantitativo y cualitativo, ofreciendo una interpretación más profunda y completa de los datos.
+
+\subsubsection{Análisis de enriquecimiento funcional}
+
+El análisis de enriquecimiento funcional se llevó a cabo utilizando el enfoque \textbf{Over-Representation Analysis (ORA)}, que se basa en identificar términos funcionales significativamente sobrerrepresentados en un conjunto de genes en comparación con un fondo genómico de referencia. Este método fue implementado en R mediante el script \textbf{\textit{functional\_analysis.R}}, diseñado para procesar múltiples conjuntos de genes de forma automatizada. Se emplearon herramientas como \textbf{clusterProfiler} y \textbf{org.Hs.eg.db}, ampliamente reconocidas en bioinformática por su robustez y versatilidad en el análisis funcional.
+
+El script fue configurado para trabajar con directorios de entrada y salida definidos por el usuario a través de argumentos en la línea de comandos. El directorio de entrada contenía archivos de texto con listas de genes que habían sido identificados y agrupados previamente. Cada archivo representaba un conjunto de genes independiente, lo que permitió evaluar términos funcionales específicos para cada comunidad detectada durante el análisis de la red. Los archivos de salida generados consistieron en gráficos en formato PNG que resumían los resultados obtenidos para cada conjunto analizado.
+
+En el primer paso del script, las listas de genes fueron leídas mediante la función \textit{readLines()} y procesadas con \textit{trimws()} para eliminar espacios en blanco, asegurando que los identificadores fueran válidos y consistentes con las bases de datos utilizadas. El formato de los genes como símbolos estándar (\textit{SYMBOL}) garantizó su compatibilidad con las bases de datos GO (Gene Ontology). Estos identificadores fueron utilizados directamente en la función \textit{enrichGO()} de clusterProfiler, la cual permitió realizar el análisis de enriquecimiento de procesos biológicos (GO-BP).
+
+El análisis ORA aplicado evaluó si los genes de cada conjunto estaban sobrerrepresentados en términos funcionales específicos de GO-BP. La configuración de \textit{enrichGO()} incluyó parámetros como el ajuste del p-valor mediante el método de Benjamini-Hochberg (BH), que controla la tasa de falsos positivos en análisis con múltiples pruebas. También se estableció un umbral de significancia de 0.05 para incluir únicamente los términos más relevantes. El análisis se basó en la comparación de los genes proporcionados frente a un fondo genómico estándar, permitiendo identificar términos enriquecidos que resaltan procesos biológicos clave, como la regulación del metabolismo energético y la dinámica mitocondrial, ambos directamente relacionados con el fenotipo HP:0008316.
+
+Los resultados del análisis se visualizaron mediante gráficos de puntos (dotplot) generados con las herramientas de visualización de clusterProfiler y \textbf{ggplot2}. En estos gráficos, cada punto representaba un término enriquecido de GO-BP, donde su tamaño indicaba el grado de enriquecimiento (proporción de genes asociados) y su posición en el eje reflejaba la significancia estadística. Los gráficos fueron guardados automáticamente en el directorio de salida especificado, con nombres que reflejaban el conjunto de genes analizado. Esto aseguró una organización clara y reproducible de los resultados.
+
+Se eligió ORA como el enfoque principal de enriquecimiento funcional debido a la naturaleza de nuestros datos, que consistían en listas específicas de genes agrupados. Otros enfoques, como GSEA o análisis basados en datos de expresión diferencial, no eran adecuados ya que no disponíamos de datos de expresión o variaciones genéticas asociadas al fenotipo. La decisión de emplear ORA estuvo respaldada por su capacidad para proporcionar información funcional relevante en contextos donde las listas de genes ya están definidas.
+
+En resumen, el análisis ORA implementado mediante este script automatizado permitió identificar procesos biológicos y rutas funcionales clave asociados a los genes agrupados en clústeres, proporcionando una perspectiva funcional complementaria al análisis topológico de la red.
+
+
+
+
